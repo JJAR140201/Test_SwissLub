@@ -14,7 +14,7 @@ import java.util.Date;
 public class MovimientosDTO {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @ManyToOne
@@ -32,10 +32,11 @@ public class MovimientosDTO {
     private BodegaDTO bodegaDestino;
 
     @Column(name = "fecha_creacion", length = 10)
-    private char fechaCreacion;
+    private String fechaCreacion;
 
     @Column(name = "fecha_entrega", length = 10)
-    private char fechaEntrega;
+    private String fechaEntrega;
 
-    private char estado;
+    @Column(name = "estado", length = 5)
+    private String estado;
 }

@@ -14,7 +14,7 @@
     @ToString
     public class BodegaDTO {
         @Id
-        @GeneratedValue(strategy = GenerationType.AUTO)
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
         private int id;
 
         private String codigo;

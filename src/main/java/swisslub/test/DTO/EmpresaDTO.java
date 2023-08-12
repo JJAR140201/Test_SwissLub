@@ -13,6 +13,7 @@ import javax.persistence.*;
 @ToString
 public class EmpresaDTO {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nombre;
 }
