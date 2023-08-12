@@ -2,6 +2,7 @@ package swisslub.test.DTO;
 
 import lombok.*;
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "movimiento")
@@ -30,11 +31,13 @@ public class MovimientosDTO {
     @JoinColumn(name = "bodega_destino_codigo")
     private BodegaDTO bodegaDestino;
 
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "fecha_creacion")
-    private Data fechaCreacion;
+    private Date fechaCreacion;
 
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "fecha_entrega")
-    private Data fechaEntrega;
+    private Date fechaEntrega;
 
     private char estado;
 }
