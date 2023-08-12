@@ -11,8 +11,8 @@ public class MovimientoDetalle {
     @ManyToOne
     @JoinColumn(name = "movimiento_id")
     private MovimientosDTO movimiento;
-    @Column(name = "item_codigo")
-    private String itemCodigo;
+    @Column(name = "producto")
+    private String producto;
     @Column(name = "cantidad_enviada")
     private int cantidadEnviada;
 }
