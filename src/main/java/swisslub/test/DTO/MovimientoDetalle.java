@@ -4,6 +4,11 @@ import lombok.*;
 import javax.persistence.*;
 @Entity
 @Table(name = "movimiento_detalle")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class MovimientoDetalle {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
