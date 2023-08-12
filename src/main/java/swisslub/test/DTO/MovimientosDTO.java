@@ -31,11 +31,9 @@ public class MovimientosDTO {
     @JoinColumn(name = "bodega_destino_codigo")
     private BodegaDTO bodegaDestino;
 
-    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "fecha_creacion")
     private Data fechaCreacion;
 
-    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "fecha_entrega")
     private Data fechaEntrega;
 
