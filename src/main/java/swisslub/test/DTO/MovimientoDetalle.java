@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class MovimientoDetalle {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    public int id;
     @ManyToOne
     @JoinColumn(name = "movimiento_id")
     private MovimientosDTO movimiento;
