@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table(name = "movimiento_detalle")
 public class MovimientoDetalle {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     @ManyToOne
     @JoinColumn(name = "movimiento_id")
