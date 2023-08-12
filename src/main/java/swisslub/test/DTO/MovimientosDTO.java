@@ -20,6 +20,9 @@ public class MovimientosDTO {
     @Column(name = "empresa")
     private String empresa;
 
+    @Column(name = "estado")
+    private String estado;
+
     @Column(name = "descripcion")
     private String descripcion;
 
@@ -29,6 +32,4 @@ public class MovimientosDTO {
     @Column(name = "fecha_entrega")
     private String fechaEntrega;
 
-    @Column(name = "estado")
-    private String estado;
 }
