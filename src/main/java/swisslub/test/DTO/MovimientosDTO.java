@@ -17,26 +17,13 @@ public class MovimientosDTO {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @ManyToOne
-    @JoinColumn(name = "id_empresa")
-    private EmpresaDTO empresa;
+    private String empresa;
 
     private String descripcion;
 
-    @ManyToOne
-    @JoinColumn(name = "bodega_origen_codigo")
-    private BodegaDTO bodegaOrigen;
-
-    @ManyToOne
-    @JoinColumn(name = "bodega_destino_codigo")
-    private BodegaDTO bodegaDestino;
-
-    @Column(name = "fecha_creacion", length = 10)
     private String fechaCreacion;
 
-    @Column(name = "fecha_entrega", length = 10)
     private String fechaEntrega;
 
-    @Column(name = "estado", length = 5)
     private String estado;
 }
