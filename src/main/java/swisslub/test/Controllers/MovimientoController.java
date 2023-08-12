@@ -8,10 +8,9 @@ import swisslub.test.DTO.MovimientosDTO;
 import swisslub.test.Services.MovimientoService;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/movimiento")
+@RequestMapping("/movimiento")
 public class MovimientoController {
 
     private final MovimientoService movimientoService;
@@ -24,37 +23,35 @@ public class MovimientoController {
     @GetMapping("/listar")
     public ResponseEntity<List<MovimientosDTO>> listarTodos() {
         List<MovimientosDTO> movimientoList = movimientoService.listarTodos();
-        return ResponseEntity.ok(movimientoList);
+        return new ResponseEntity<>(movimientoList, HttpStatus.OK);
     }
 
     @GetMapping("/listar/{id}")
-    public ResponseEntity<MovimientosDTO> obtenerMovimientoPorId(@PathVariable int id) {
-        Optional<MovimientosDTO> movimiento = Optional.ofNullable(movimientoService.listarPorId(id));
-        return movimiento.map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
+    public ResponseEntity<MovimientosDTO> listarPorId(@PathVariable int id) {
+        MovimientosDTO movimientosDTO = movimientoService.listarPorId(id);
+        if (movimientosDTO != null) {
+            return new ResponseEntity<>(movimientosDTO, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 
     @PostMapping("/registrar")
     public ResponseEntity<Void> registrar(@RequestBody MovimientosDTO entidad) {
         movimientoService.registrar(entidad);
-        return ResponseEntity.status(HttpStatus.CREATED).build();
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @PutMapping("/actualizar/{id}")
-    public ResponseEntity<Object> actualizar(@PathVariable int id, @RequestBody MovimientosDTO entidad) {
-        Optional<MovimientosDTO> existingMovimiento = Optional.ofNullable(movimientoService.listarPorId(id));
-        return existingMovimiento.map(mov -> {
+    public ResponseEntity<Void> actualizar(@PathVariable int id, @RequestBody MovimientosDTO entidad) {
+        MovimientosDTO existingMovimiento = movimientoService.listarPorId(id);
+        if (existingMovimiento != null) {
             entidad.setId(id);
             movimientoService.actualizar(entidad);
-            return ResponseEntity.ok().build();
-        }).orElse(ResponseEntity.notFound().build());
+            return new ResponseEntity<>(HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 
-    @DeleteMapping("/eliminar/{id}")
-    public ResponseEntity<Object> eliminar(@PathVariable int id) {
-        Optional<MovimientosDTO> existingMovimiento = Optional.ofNullable(movimientoService.listarPorId(id));
-        return existingMovimiento.map(mov -> {
-            movimientoService.eliminar(id);
-            return ResponseEntity.ok().build();
-        }).orElse(ResponseEntity.notFound().build());
-    }
 }
