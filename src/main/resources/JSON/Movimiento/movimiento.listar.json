@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "empresa": "Frubber doña tomasa",
+        "estado": "P",
+        "descripcion": "Productos pendiente por entregar",
+        "fechaCreacion": "2023-03-03",
+        "fechaEntrega": "2023-04-12"
+    },
+    {
+        "id": 2,
+        "empresa": "La Casa de empeño",
+        "estado": "E",
+        "descripcion": "Productos a sido entregado",
+        "fechaCreacion": "2023-05-03",
+        "fechaEntrega": "2023-05-12"
+    },
+    {
+        "id": 3,
+        "empresa": "Teresita",
+        "estado": "T",
+        "descripcion": "Productos en camino",
+        "fechaCreacion": "2023-01-03",
+        "fechaEntrega": "2023-01-12"
+    },
+    {
+        "id": 4,
+        "empresa": "Todo lo tenemos SAS",
+        "estado": "E",
+        "descripcion": "Productos Entregado",
+        "fechaCreacion": "2023-10-03",
+        "fechaEntrega": "2023-10-12"
+    },
+    {
+        "id": 5,
+        "empresa": "Involucrados SAS",
+        "estado": "P",
+        "descripcion": "Productos pendiente por entregar",
+        "fechaCreacion": "2023-11-03",
+        "fechaEntrega": "2023-11-12"
+    }
+]

@@ -1,0 +1,10 @@
+[
+    {
+        "id": 2,
+        "empresa": "La Casa de empeño",
+        "estado": "T",
+        "descripcion": "Productos en Camino",
+        "fechaCreacion": "2023-06-03",
+        "fechaEntrega": "2023-06-12"
+    }
+]
